@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> 
+    <link rel="shortcut icon" href="">
+    <meta name="description" content=""/>
+    <meta name="keywords" content="">
+
+    <title>Sound Test</title>
+</head>
+<body>
+<button onclick="playSound()">Play Sound</button>
+<br>
+<button onclick="stopSound()">Stop Sound</button>
+<pre>
+var mp3 = new Audio("sounds/beep.mp3");
+var soundInterval;
+function playSound(){
+    mp3.play();
+    soundInterval = setInterval(function(){
+        mp3.play();
+    },3000);
+}
+</pre>
+<script type="text/javascript">
+    var mp3 = new Audio("sounds/beep.mp3");
+    var soundInterval;
+    function playSound(){
+        mp3.play();
+        soundInterval = setInterval(function(){
+            mp3.play();
+        },3000);
+    }
+
+    function stopSound(){
+        clearInterval(soundInterval);
+    }
+</script>
+</body>
+</html>
